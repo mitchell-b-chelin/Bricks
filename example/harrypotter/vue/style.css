@@ -1,0 +1,17 @@
+.test-vue {
+    padding: 10px;
+    text-align: center;
+}
+
+.dark .test-vue {
+    background-color: #333;
+    color: #fff;
+}
+.light .test-vue {
+    background-color: #fff;
+    color: #333;
+}
+.orange .test-vue {
+    background-color: #ffa500;
+    color: #fff;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "students-vue",
+  "title": "Students Vue",
+  "description": "An amazing first test",
+  "icon": "admin-comments",
+  "keywords": [
+    "Students",
+    "Harry Potter",
+    "Muggles"
+  ],
+  "settings": {
+  },
+  "styles": [
+    {
+      "class": "light",
+      "label": "Light",
+      "default": true
+    },
+    {
+      "class": "dark",
+      "label": "Dark"
+    },
+    {
+      "class": "orange",
+      "label": "orange"
+    }
+  ],
+  "preview": {
+    "test_title": "Hello World",
+    "test_subtitle": "Lorem Ipsum"
+  }
+}

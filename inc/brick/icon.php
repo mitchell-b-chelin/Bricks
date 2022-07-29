@@ -1,0 +1,35 @@
+<?php
+namespace MBC\inc\brick;
+defined( 'ABSPATH' ) || exit;
+class Icon extends brick {
+    function __construct(){}
+    /**
+     * Icon Setup
+     *
+     * brick icon array setup ( Javascript )
+     */
+    public static function set(){
+        // if brick icons is not empty and is admin page
+        if(!empty(self::$brick_icons) && is_admin()) {
+            // Set Icon Array to gbi variable
+            $gbi = self::$brick_icons;
+            // Add icons to admin footer
+            add_action('admin_footer', function() use($gbi) {
+                // Sprintf Icon And Setup new bricks Class
+                $sprintf = "<script>
+                window.addEventListener('load', function() {
+                    window.bricks = {
+                        vue: {},
+                        icons: %s
+                    };
+                    window.bricks.icons.forEach(function (brick) {
+                        categoryIcon(brick.slug, brick.svg);
+                    });
+                });
+                </script>";
+                // Echo Icon Function to footer
+                echo sprintf($sprintf, json_encode($gbi));
+            });
+        }
+    }
+}

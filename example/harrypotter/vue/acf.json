@@ -1,0 +1,14 @@
+[
+  {
+    "key": "title",
+    "label": "Title",
+    "name": "Title",
+    "type": "text"
+  },
+  {
+    "key": "subtitle",
+    "label": "Subtitle",
+    "name": "Subtitle",
+    "type": "text"
+  }
+]

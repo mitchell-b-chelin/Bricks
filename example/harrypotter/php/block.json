@@ -1,0 +1,50 @@
+{
+  "name": "students-php",
+  "title": "Students PHP",
+  "description": "An amazing second test",
+  "icon": "admin-comments",
+  "keywords": [
+    "Students",
+    "Harry Potter",
+    "Muggles"
+  ],
+  "settings": {
+    "restrict": {
+      "values": [
+        "keep_gate",
+        25,
+        1
+      ],
+      "type": "and"
+    },
+    "loggedin": false
+  },
+  "preview": {
+    "test_title": "Hello World",
+    "test_subtitle": "Lorem Ipsum"
+  },
+  "supports": {
+    "anchor": true,
+    "align": true,
+    "alignWide": true,
+    "className": true,
+    "color": true,
+    "color.background": true,
+    "color.__experimentalDuotone": false,
+    "color.gradients": true,
+    "color.link": true,
+    "color.text": true,
+    "customClassName": true,
+    "defaultStylePicker": true,
+    "html": true,
+    "inserter": true,
+    "multiple": true,
+    "reusable": true,
+    "lock": true,
+    "spacing": true,
+    "typography": true,
+    "typography.fontSize": true,
+    "typography.lineHeight": true,
+    "jsx": true
+  }
+}
