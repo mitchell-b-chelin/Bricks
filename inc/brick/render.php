@@ -25,13 +25,14 @@ function block_render( $block, $content = '', $is_preview = false ) {
     if(!isset($block['className'])) $block['className'] = "default";
     // Setup global post
     global $post;
-    // if no post return
-    if(!$post) return;
+    
     //if is admin preview is always true.
     $is_preview = Prepare::is_admin() ? true : false;
     // Setup Post Data
-    $post = get_post( $post->ID );
-    setup_postdata( $post );
+    if($post) {
+        $post = get_post( $post->ID );
+        setup_postdata( $post );
+    }
     // Setup passable variables
     $meta = get_post_meta($post->ID) ?? array();
     //if function exists get_fields
@@ -52,7 +53,7 @@ function block_render( $block, $content = '', $is_preview = false ) {
     // if SCSS class exists Convert inline SCSS to CSS or return template inside block-render div
     $template = class_exists('MBC\\inc\\scss') ? \MBC\inc\scss::convert($template) : $template;
     // reset post data
-    wp_reset_postdata();
+    if($post) wp_reset_postdata();
     if($block['vue']){
         //Add global without having to echo it
         $template = str_replace('$GLOBAL', $GLOBAL, $template);
