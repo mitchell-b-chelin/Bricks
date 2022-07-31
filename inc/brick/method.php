@@ -13,7 +13,9 @@ class Method extends brick {
         if(is_admin()) { 
             //add action wp_enqueue_scripts
             add_action('admin_enqueue_scripts', function(){
-                wp_enqueue_script('brick-blocks-js', plugins_url('assets/brick.js', __FILE__), false, self::$version, false);
+                //get screen
+                $screen = get_current_screen();
+                if($screen->base === 'post') wp_enqueue_script('brick-blocks-js', plugins_url('../assets/brick.js', __FILE__), false, self::$version, false);
             }); 
         }
 
@@ -32,7 +34,9 @@ class Method extends brick {
             // Enqueue bricks prototype method REACT
             if(is_admin()) {
                 add_action('admin_enqueue_scripts', function(){
-                    wp_enqueue_script('brick-blocks-prototype-js', plugins_url('assets/bricks.prototype.v2.js', __FILE__), false, self::$version, false);
+                    //get screen
+                    $screen = get_current_screen();
+                    if($screen->base === 'post') wp_enqueue_script('brick-blocks-prototype-js', plugins_url('assets/bricks.prototype.v2.js', __FILE__), false, self::$version, false);
                 });
             }
 

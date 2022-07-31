@@ -15,6 +15,8 @@ class Icon extends brick {
             $gbi = self::$brick_icons;
             // Add icons to admin footer
             add_action('admin_footer', function() use($gbi) {
+                $screen = get_current_screen();
+                
                 // Sprintf Icon And Setup new bricks Class
                 $sprintf = "<script>
                 window.addEventListener('load', function() {
@@ -28,7 +30,7 @@ class Icon extends brick {
                 });
                 </script>";
                 // Echo Icon Function to footer
-                echo sprintf($sprintf, json_encode($gbi));
+                if($screen->base === 'post') echo sprintf($sprintf, json_encode($gbi));
             });
         }
     }
