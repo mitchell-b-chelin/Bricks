@@ -123,7 +123,7 @@ class Prepare extends brick {
             //Template path for where your bricks are stored.
             'template_path' => get_stylesheet_directory() . '/templates/bricks/',
             // Template restriction php
-            'template_restriction' => plugin_dir_path(__FILE__)."assets/restricted.php",
+            'template_restriction' => plugin_dir_path(__FILE__)."../assets/restricted.php",
             // Vue version and enviroment loaded
             'vue' => array(
                 'version' => '3',
@@ -155,8 +155,9 @@ class Prepare extends brick {
             //if template restriction is set
             if(isset($custom_setup['template_restriction'])){
                 //set template restriction to if the file exists otherwise use the plugin default.
-                $custom_setup['template_restriction'] = file_exists($custom_setup['template_restriction']) ? $custom_setup['template_restriction'] : plugin_dir_path(__FILE__)."assets/restricted.php";
+                $custom_setup['template_restriction'] = file_exists($custom_setup['template_restriction']) ? $custom_setup['template_restriction'] : plugin_dir_path(__FILE__)."../assets/restricted.php";
             }
+            
             self::$default_setup = $custom_setup;
 
         };
@@ -172,7 +173,7 @@ class Prepare extends brick {
     public static function check(){
         $passed = true;
         if(isset(self::$default_setup)){
-            if(!file_exists(self::$default_setup['template_path'])) $passed = false;
+            if(!is_dir(self::$default_setup['template_path'])) $passed = false;
             if(!file_exists(self::$default_setup['template_restriction'])) $passed = false;
         } else $passed = false;
         return $passed;
