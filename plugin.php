@@ -5,7 +5,7 @@
  * A developer friendly guttenberg block registration method.
  *
  * @link		https://github.com/mitchell-b-chelin/Bricks/blob/main/LICENSE
- * @since 		1.0.9
+ * @since 		1.0.10
  * @package		MBC
  *
  * Plugin Name:	   	Bricks

@@ -22,7 +22,7 @@ class Register extends brick {
         
         // if Current block has a name set block name
         // Note: Registering blocks of the same name will override the previous one
-        if(self::$current_block['info']['name']){
+        if(isset(self::$current_block['info']['name'])){
             // Remove Spaces from Block Name
             $block_set_name = str_replace(' ', '', self::$current_block['info']['name']);
             // Only A-Z Charecter in name
