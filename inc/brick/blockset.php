@@ -1,6 +1,6 @@
 <?php
 namespace MBC\inc\brick;
-defined( 'ABSPATH' ) || exit;
+if(!defined('ABSPATH') || !defined('WP_CONTENT_DIR') || !defined('WP_CONTENT_URL')) exit;
 class Block extends brick {
     function __construct(){}
     /**
@@ -16,15 +16,8 @@ class Block extends brick {
             if(!$block || $block == '.' || $block == '..') continue;
             // Set Current block path
             self::$current_block_path = self::$current_cat_path.'/'.$block;
-            
-            /**
-             * Fix for abspath returning incorrect path on some trellis/roots wordpress installations
-             */
-            $abs_path = strpos(ABSPATH, '/current/web/wp/') !== false ? str_replace('/wp/', '', ABSPATH) : ABSPATH;
-
             // Set Current block URI
-            self::$current_block_uri = str_replace($abs_path, get_home_url().'/', self::$current_block_path);
-
+            self::$current_block_uri = str_replace(WP_CONTENT_DIR, WP_CONTENT_URL, self::$current_block_path);
             if(!is_dir(self::$current_block_path)) continue;
             // Scan for files
             $files = scandir(self::$current_block_path);

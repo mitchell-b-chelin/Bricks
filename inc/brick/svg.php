@@ -1,6 +1,6 @@
 <?php
 namespace MBC\inc\brick;
-defined( 'ABSPATH' ) || exit;
+if(!defined('ABSPATH') || !defined('WP_CONTENT_DIR') || !defined('WP_CONTENT_URL')) exit;
 class SVGJson extends brick {
 	function __construct(){}
 	public static function convert($file) {

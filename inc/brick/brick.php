@@ -6,7 +6,7 @@
  * @package MBC\Docsify
  */
 namespace MBC\inc\brick;
-defined( 'ABSPATH' ) || exit;
+if(!defined('ABSPATH') || !defined('WP_CONTENT_DIR') || !defined('WP_CONTENT_URL')) exit;
 
 
 class brick {

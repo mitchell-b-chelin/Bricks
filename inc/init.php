@@ -1,6 +1,6 @@
 <?php
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+if(!defined('ABSPATH') || !defined('WP_CONTENT_DIR') || !defined('WP_CONTENT_URL')) exit;
 
 
 
