@@ -64,7 +64,9 @@ class Block extends brick {
             case 'info.json':
             case 'init.json':
             case 'block.json':
+            case 'blocks.json':
             case 'brick.json':
+            case 'bricks.json':
                 // Decode JSON  
                 $info = @json_decode(file_get_contents(self::$current_block_path . '/' . $file), true);
                 // Check if JSON has is Settings Field
