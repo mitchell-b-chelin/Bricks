@@ -48,7 +48,7 @@ class Register extends brick {
         //set default scss & mixins to current blocks scss
         $current_scss = self::$current_block['scss'] ?? array();
         $scss_global = self::$default_setup['global']['scss'];
-        $scss_global['stylesheets'] = array_merge($scss_global['stylesheets'], $current_scss);
+        $scss_global['stylesheets'] = array_merge($scss_global['stylesheets'] ?? array(), $current_scss);
 
        
 
