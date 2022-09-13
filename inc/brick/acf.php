@@ -9,11 +9,15 @@ class ACF extends brick {
      * Set ACF Fields from current block fields
      */
     public static function set($block_set_name){
+        //replace _ with - $block_set_name
+        $block_set_name = str_replace('_', '-', $block_set_name);
         if(!function_exists('acf_add_local_field_group')) return;
         // if Current Block has ACF Fields
         if(!empty(self::$current_block['acf'])){
             // Get field Groups from Block name
             $field_groups = self::field_groups($block_set_name);
+
+          
             // if field groups do not exist create them
             if(!$field_groups) acf_add_local_field_group(array(
                 // Field Group key
@@ -35,6 +39,8 @@ class ACF extends brick {
                     ),
                   ),
                 ),
+                'show_in_rest' => true,
+                'active' => true
             ));
         }
     }
