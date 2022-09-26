@@ -60,7 +60,8 @@ function block_render( $block, $content = '', $is_preview = false ) {
         $template = Vue::template($template, $block);
     }
     unset($block['icon']);
-    $template = "<div class=".$block['className']." id=".$block['id'].">$template</div>";
+    $template_sprint = "<div class='%s' id='%s'>%s</div>";
+    $template = sprintf($template_sprint,$block['className'],$block['id'],$template);
     if($block['setmode'] === 'bricks') return $template; 
     else echo $template;
 }

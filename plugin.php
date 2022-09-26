@@ -11,7 +11,7 @@
  * Plugin Name:	   	Bricks
  * Plugin URI:		https://github.com/mitchell-b-chelin/Bricks/blob/main/LICENSE
  * Description:	   	A developer friendly guttenberg block registration method.
- * Version:		   	1.0.15
+ * Version:		   	1.0.16
  * Author:			Mitchell-Blair Chelin
  * Author URI:		https://github.com/mitchell-b-chelin/
  * License:		   	MIT
