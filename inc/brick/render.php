@@ -5,7 +5,7 @@
  *
  * @package MBC\Docsify
  */
-namespace MBC\inc\brick;
+namespace MBC\brick;
 if(!defined('ABSPATH') || !defined('WP_CONTENT_DIR') || !defined('WP_CONTENT_URL')) exit;
 
 /**
@@ -16,7 +16,8 @@ if(!defined('ABSPATH') || !defined('WP_CONTENT_DIR') || !defined('WP_CONTENT_URL
  * @return html
  */
 function block_render( $block, $content = '', $is_preview = false ) {
-
+    //var_dump($block);
+    //die;
 
     //No block return early
     if(!$block) return;

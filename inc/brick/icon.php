@@ -1,5 +1,5 @@
 <?php
-namespace MBC\inc\brick;
+namespace MBC\brick;
 if(!defined('ABSPATH') || !defined('WP_CONTENT_DIR') || !defined('WP_CONTENT_URL')) exit;
 class Icon extends brick {
     function __construct(){}

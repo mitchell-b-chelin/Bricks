@@ -1,5 +1,5 @@
 <?php
-namespace MBC\inc\brick;
+namespace MBC\brick;
 if(!defined('ABSPATH') || !defined('WP_CONTENT_DIR') || !defined('WP_CONTENT_URL')) exit;
 class Register extends brick {
     function __construct(){}
@@ -50,8 +50,7 @@ class Register extends brick {
         $scss_global = self::$default_setup['global']['scss'];
         $scss_global['stylesheets'] = array_merge($scss_global['stylesheets'] ?? array(), $current_scss);
 
-       
-
+        
         // Setup Register Array
         $__register = array(
             // Block Name ( No Name Spacing )
@@ -121,7 +120,7 @@ class Register extends brick {
             'scss' => $scss_global,
             'styles'  => self::$current_block['styles'] ?? array(),
             // Render Callback block_render Function
-            'render_callback'   => 'MBC\inc\brick\block_render',
+            'render_callback'   => 'MBC\brick\block_render',
             //is editor 
             'isEditor'          => Prepare::is_admin(),
             // Block Category
@@ -132,9 +131,11 @@ class Register extends brick {
             'namespace'         => self::$namespace,
             // brick Mode 
             'setmode'           => self::$mode,
+            'align'             => isset(self::$current_block['info']['alignment']) ? self::$current_block['info']['alignment'] : '',
             // Block Attributes
             'keywords'          => self::$current_block['info']['keywords'] ?? array(),
             // Block Supports
+            //'supports' => array('mode' => false), ( maybe? idk yet )
             'supports'		=> self::$current_block['supports'] ?? array(),
             // Block Attributes else false
             'example'           => isset(self::$current_block['preview']) ? array(
