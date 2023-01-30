@@ -136,10 +136,7 @@ class Prepare extends brick {
                 // Stylesheet globals
                 'css' => array(),
                 // Sass Globals
-                'scss' => array(
-                    'mixins' => array(),
-                    'stylesheets' => array()
-                )
+                'scss' => array()
             )
         );
         //if setup is empty set default setup array

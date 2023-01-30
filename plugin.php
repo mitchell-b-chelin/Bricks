@@ -7,7 +7,7 @@
  * Plugin Name:	   	Bricks
  * Plugin URI:		https://github.com/mitchell-b-chelin/Bricks/
  * Description:	   	Bricks is a Guttenberg plugin that makes it easy for developers to create custom blocks using Advanced Custom Fields Pro. Easily add dynamic content to your pages and posts with Bricks.
- * Version:		   	2.0
+ * Version:		   	2.1
  * Author:			Mitchell-Blair Chelin
  * Author URI:		https://github.com/mitchell-b-chelin/
  * License:		   	MIT

@@ -1,13 +1,15 @@
 # Overides
-Overides allow you change the default directory, loaded assets and more within bricks.
+![lego 8](_images/lego_8.png)
+Bricks provides a way to change the default directory, loaded assets, and other properties within Bricks. 
 
+To achieve this, you can use the following code in your `functions.php` file
 ```php
 /* functions.php */
 
 /* Is not required rename the namespace using MBC\inc before the class is fine */
-use MBC\inc\brick as PLUGINS;
+use MBC\brick as BRICKS;
 
-PLUGINS\Prepare::setup(array(
+BRICKS\Prepare::setup(array(
     //Template path for where your bricks are stored.
     'template_path' => get_stylesheet_directory() . '/templates/blocks/',
     // Template restriction php
@@ -29,7 +31,7 @@ PLUGINS\Prepare::setup(array(
             get_stylesheet_directory_uri() . '/assets/css/style1.css',
             get_stylesheet_directory_uri() . '/assets/css/style2.css',
         ),
-        // Sass Globals ( if you are using SCSS-Native Plugin otherwise ignored )
+        // Sass Globals ( if you are using SCSS-Native Plugin otherwise a empty array is required )
         'scss' => array(
             'mixins' => array(
                 get_stylesheet_directory_uri() . '/assets/scss/mixins/mixin1.scss',
